@@ -14,10 +14,23 @@ import static com.mycompany.hotel.objetos.HabitacionCSL.crearHabitacion;
 import static com.mycompany.hotel.objetos.HabitacionCSL.mostrarHabitacion;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * Clase principal del programa HotelCSL, que gestiona las operaciones del sistema de hotel,
+ * incluyendo el registro y la eliminación de clientes, empleados y habitaciones, así como la visualización
+ * de los datos de cada entidad.
+ * 
+ * @author Serrano López, Carlos
+ * @version 1.0
+ */
 public class HotelCSL {
-
+/**
+     * Método principal que ejecuta el programa del hotel. Gestiona el menú y las opciones que el usuario
+     * puede seleccionar para interactuar con el sistema de hotel.
+     * 
+     * @param args Argumentos de la línea de comandos (no se utilizan en este caso).
+     */
     public static void main(String[] args) {
+        
         Scanner teclado = new Scanner(System.in);
         ArrayList<ClienteCSL> clientes = new ArrayList<ClienteCSL>();
         ArrayList<EmpleadoCSL> empleados = new ArrayList<EmpleadoCSL>();
@@ -26,7 +39,7 @@ public class HotelCSL {
         ClienteCSL cliente = null;
         EmpleadoCSL empleado = null;
         HabitacionCSL habitacion = null;
-        int idCliente;
+        int idCliente; 
         int idEmpleado;
         String nombre;
         String apellidos;

@@ -3,65 +3,102 @@ package com.mycompany.hotel.objetos;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Representa una habitación en el hotel con su información y métodos para su
+ * gestión.
+ *
+ * @author Serrano López, Carlos
+ * @version 1.0
+ */
 public class HabitacionCSL {
+
     private final int idHabitacion;
     private String tipo;
     private int numeroCamas;
     private double costePorDia;
 
+    /**
+     * Constructor para inicializar una habitación con su ID.
+     *
+     * @param idHabitacion Identificador único de la habitación.
+     */
     public HabitacionCSL(int idHabitacion) {
         this.idHabitacion = idHabitacion;
     }
 
     /**
-     * @return the idHabitacion
+     * Obtiene el ID de la habitación.
+     *
+     * @return ID de la habitación.
      */
     public int getIdHabitacion() {
         return idHabitacion;
     }
 
     /**
-     * @return the tipo
+     * Obtiene el tipo de la habitación.
+     *
+     * @return Tipo de la habitación.
      */
     public String getTipo() {
         return tipo;
     }
 
     /**
-     * @return the numeroCamas
+     * Obtiene el número de camas de la habitación.
+     *
+     * @return Número de camas de la habitación.
      */
     public int getNumeroCamas() {
         return numeroCamas;
     }
 
     /**
-     * @return the costePorDia
+     * Obtiene el coste por día de la habitación.
+     *
+     * @return Coste por día de la habitación.
      */
     public double getCostePorDia() {
         return costePorDia;
     }
 
     /**
-     * @param tipo the tipo to set
+     * Establece el tipo de la habitación.
+     *
+     * @param tipo Tipo de la habitación.
      */
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
     /**
-     * @param numeroCamas the numeroCamas to set
+     * Establece el número de camas de la habitación.
+     *
+     * @param numeroCamas Número de camas de la habitación.
      */
     public void setNumeroCamas(int numeroCamas) {
         this.numeroCamas = numeroCamas;
     }
 
     /**
-     * @param costePorDia the costePorDia to set
+     * Establece el coste por día de la habitación.
+     *
+     * @param costePorDia Coste por día de la habitación.
      */
     public void setCostePorDia(double costePorDia) {
         this.costePorDia = costePorDia;
     }
-     public static HabitacionCSL crearHabitacion(Scanner teclado, HabitacionCSL habitacion, ArrayList<HabitacionCSL> habitaciones) {
+
+    /**
+     * Crea una nueva habitación y la agrega a la lista de habitaciones.
+     *
+     * @param teclado El scanner utilizado para leer los datos de la habitación.
+     * @param habitacion El objeto habitación que se creará.
+     * @param habitaciones La lista de habitaciones a la que se añadirá la nueva
+     * habitación.
+     * @return El objeto habitación recién creado.
+     */
+    public static HabitacionCSL crearHabitacion(Scanner teclado, HabitacionCSL habitacion, ArrayList<HabitacionCSL> habitaciones) {
         int idHabitacion;
         String tipo;
         int numeroCamas;
@@ -83,14 +120,25 @@ public class HabitacionCSL {
         habitaciones.add(habitacion);
         return habitacion;
     }
-      public static HabitacionCSL borrarHabitacion(Scanner teclado, ArrayList<HabitacionCSL> habitaciones, HabitacionCSL habitacion) {
+
+    /**
+     * Método para borrar una habitación.
+     *
+     * @param teclado El objeto Scanner para la entrada de datos.
+     * @param habitaciones La lista de habitaciones donde se buscará la
+     * habitación a eliminar.
+     * @param habitacion La habitación a eliminar de la lista.
+     * @return El objeto `HabitacionCSL` eliminado, o null si no se encontró.
+     */
+
+    public static HabitacionCSL borrarHabitacion(Scanner teclado, ArrayList<HabitacionCSL> habitaciones, HabitacionCSL habitacion) {
         int idCliente;
         System.out.println("Introduzca el id de la habitación a eliminar: ");
         idCliente = teclado.nextInt();
         if (habitaciones.isEmpty()) {
             System.out.println("No hay habitaciones para borrar...");
         } else {
-            
+
             for (HabitacionCSL clienteABorrar : habitaciones) {
                 if (clienteABorrar.getIdHabitacion() == idCliente) {
                     habitacion = clienteABorrar;
@@ -99,12 +147,19 @@ public class HabitacionCSL {
             habitaciones.remove(habitacion);
         }
         return habitacion;
+
     }
-       public static void mostrarHabitacion(ArrayList<HabitacionCSL> habitaciones) {
+
+    /**
+     * Muestra la lista de habitaciones registradas en el sistema.
+     *
+     * @param habitaciones Lista de habitaciones a mostrar.
+     */
+    public static void mostrarHabitacion(ArrayList<HabitacionCSL> habitaciones) {
         if (habitaciones.isEmpty()) {
             System.out.println("No hay habitaciones para mostrar...");
         } else {
-            
+
             for (HabitacionCSL habitacionAMostrar : habitaciones) {
                 System.out.println("ID: " + habitacionAMostrar.getIdHabitacion());
                 System.out.println("Tipo: " + habitacionAMostrar.getTipo());

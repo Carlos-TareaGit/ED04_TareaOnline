@@ -12,4 +12,22 @@
         <exec.mainClass>com.mycompany.hotel.Hotel</exec.mainClass>
     </properties>
     <name>Serrano_Lopez_Carlos_ED04_TareaOnline</name>
+ <build>
+        <plugins>
+            <!-- Plugin para generar Javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

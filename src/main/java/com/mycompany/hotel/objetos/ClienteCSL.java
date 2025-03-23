@@ -3,80 +3,119 @@ package com.mycompany.hotel.objetos;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase que representa un cliente del hotel. Contiene información personal como
+ * nombre, apellidos, DNI y número de teléfono. También proporciona métodos para
+ * crear, eliminar y mostrar clientes.
+ *
+ * @author Serrano López, Carlos
+ * @version 1.0
+ */
 public class ClienteCSL {
+
     private final int idCliente;
     private String nombre;
     private String apellidos;
     private String DNI;
     private int numeroTelefono;
 
+    /**
+     * Constructor de ClienteCSL.
+     *
+     * @param idCliente Identificador único del cliente.
+     */
     public ClienteCSL(int idCliente) {
         this.idCliente = idCliente;
     }
 
     /**
-     * @return the idCliente
+     * Obtiene el ID del cliente.
+     *
+     * @return ID del cliente.
      */
     public int getIdCliente() {
         return idCliente;
     }
 
     /**
-     * @return the nombre
+     * Obtiene el nombre del cliente.
+     *
+     * @return Nombre del cliente.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * @return the apellidos
+     * Obtiene los apellidos del cliente.
+     *
+     * @return Apellidos del cliente.
      */
     public String getApellidos() {
         return apellidos;
     }
 
     /**
-     * @return the DNI
+     * Obtiene el DNI del cliente.
+     *
+     * @return DNI del cliente.
      */
     public String getDNI() {
         return DNI;
     }
 
     /**
-     * @return the numeroTelefono
+     * Obtiene el número de teléfono del cliente.
+     *
+     * @return Número de teléfono del cliente.
      */
     public int getNumeroTelefono() {
         return numeroTelefono;
     }
 
     /**
-     * @param nombre the nombre to set
+     * Establece el nombre del cliente.
+     *
+     * @param nombre Nuevo nombre del cliente.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * @param apellidos the apellidos to set
+     * Establece los apellidos del cliente.
+     *
+     * @param apellidos Nuevos apellidos del cliente.
      */
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 
     /**
-     * @param DNI the DNI to set
+     * Establece el DNI del cliente.
+     *
+     * @param DNI Nuevo DNI del cliente.
      */
     public void setDNI(String DNI) {
         this.DNI = DNI;
     }
 
     /**
-     * @param numeroTelefono the numeroTelefono to set
+     * Establece el número de teléfono del cliente.
+     *
+     * @param numeroTelefono Nuevo número de teléfono del cliente.
      */
     public void setNumeroTelefono(int numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
-     public static void crearCliente(Scanner teclado, ArrayList<ClienteCSL> clientes) {
+
+    /**
+     * Crea un nuevo cliente y lo añade a la lista de clientes.
+     *
+     * @param teclado Scanner para la entrada de datos.
+     * @param clientes Lista donde se almacenarán los clientes.
+     */
+    public static void crearCliente(Scanner teclado, ArrayList<ClienteCSL> clientes) {
         int idCliente;
         ClienteCSL cliente;
         String nombre;
@@ -100,7 +139,14 @@ public class ClienteCSL {
         clientes.add(cliente);
         return;
     }
-      public static void borrarCliente(Scanner teclado, ArrayList<ClienteCSL> clientes) {
+
+    /**
+     * Elimina un cliente de la lista por su ID.
+     *
+     * @param teclado Scanner para la entrada de datos.
+     * @param clientes Lista de clientes registrados.
+     */
+    public static void borrarCliente(Scanner teclado, ArrayList<ClienteCSL> clientes) {
         int idCliente;
         System.out.println("Introduzca el id del cliente a dar de baja: ");
         idCliente = teclado.nextInt();
@@ -114,7 +160,13 @@ public class ClienteCSL {
             }
         }
     }
- public static void mostrarClientes(ArrayList<ClienteCSL> clientes) {
+
+    /**
+     * Muestra la lista de clientes registrados.
+     *
+     * @param clientes Lista de clientes registrados.
+     */
+    public static void mostrarClientes(ArrayList<ClienteCSL> clientes) {
         if (clientes.isEmpty()) {
             System.out.println("No hay clientes para mostrar...");
         } else {
